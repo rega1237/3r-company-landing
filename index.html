@@ -7,10 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline md:font-normal">
-      Hello world!
-    </h1>
+  <body class="">
+    <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
+      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+        <span class="countdown font-mono text-5xl">
+          <span id="days" style="--value:00;"></span>
+        </span>
+        days
+      </div>
+      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+        <span class="countdown font-mono text-5xl">
+          <span id="hours" style="--value:00;"></span>
+        </span>
+        hours
+      </div>
+      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+        <span class="countdown font-mono text-5xl">
+          <span id="min" style="--value:00;"></span>
+        </span>
+        min
+      </div>
+      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+        <span class="countdown font-mono text-5xl">
+          <span id="sec" style="--value:${counter};"></span>
+        </span>
+        sec
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
