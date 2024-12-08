@@ -501,7 +501,11 @@
           <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
         </div>
         <div class="w-full py-6 z-20">
-          <form id="form" action="" class="sm:w-[80%] w-full px-4 lg:px-0 mx-auto">
+          <form
+            id="form"
+            action=""
+            class="sm:w-[80%] w-full px-4 lg:px-0 mx-auto"
+          >
             <div class="pb-2 pt-4">
               <input
                 type="text"
@@ -513,7 +517,7 @@
             </div>
             <div class="pb-2 pt-4">
               <input
-                class="block w-full p-4 text-lg text-gray-500  rounded-lg shadow-sm"
+                class="block w-full p-4 text-lg text-gray-500 rounded-lg shadow-sm"
                 type="phone"
                 name="phone"
                 id="phone"
@@ -522,7 +526,7 @@
             </div>
             <div class="pb-2 pt-4">
               <input
-                class="block w-full p-4 text-lg text-gray-500  rounded-lg shadow-sm"
+                class="block w-full p-4 text-lg text-gray-500 rounded-lg shadow-sm"
                 type="email"
                 name="email"
                 id="email"
@@ -536,9 +540,7 @@
                 class="w-full z-10 rounded-lg border-gray-200 p-4 pe-12 text-sm text-gray-500 shadow-sm"
                 required
               >
-                <option value="" disabled selected>
-                  Elige tu regalo
-                </option>
+                <option value="" disabled selected>Elige tu regalo</option>
                 <option value="Bowl">Bowl</option>
                 <option value="Kit Barista">Kit Barista</option>
                 <option value="Tabla">Tabla de bambú</option>
@@ -549,15 +551,18 @@
               <select
                 id="relacion"
                 name="relacion"
-                class="w-full z-10 rounded-lg border-gray-200 p-4 pe-12 text-sm text-gray-500  shadow-sm"
+                class="w-full z-10 rounded-lg border-gray-200 p-4 pe-12 text-sm text-gray-500 shadow-sm"
                 required
               >
                 <option value="" disabled selected>
-                  ¿Cuál de las siguientes opciones describe mejor tu relación con Royal Prestige?
+                  ¿Cuál de las siguientes opciones describe mejor tu relación
+                  con Royal Prestige?
                 </option>
                 <option value="Bowl">Bowl</option>
                 <option value="Kit Barista">Soy cliente</option>
-                <option value="Tabla">No soy cliente, pero conozco la marca</option>
+                <option value="Tabla">
+                  No soy cliente, pero conozco la marca
+                </option>
                 <option value="Utensilio">No conozco la marca</option>
               </select>
             </div>
@@ -573,8 +578,51 @@
       </div>
     </section>
 
-
-    </div>
+    <section class="container mx-auto p-4">
+      <h1 class="text-4xl pt-3 font-christmas font-bold text-center mb-8">
+        ¡Nuestros participantes felices!
+      </h1>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      >
+        <div
+          class="overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105"
+        >
+          <img
+            src="src/images/testimonio_1.jpeg"
+            alt="Imagen divertida 1"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div
+          class="overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105"
+        >
+          <img
+            src="src/images/testimonio_2.jpeg"
+            alt="Imagen divertida 2"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div
+          class="overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105"
+        >
+          <img
+            src="src/images/testimonio_3.jpeg"
+            alt="Imagen divertida 3"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div
+          class="overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105"
+        >
+          <img
+            src="src/images/testimonio_1.jpeg"
+            alt="Imagen divertida 4"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
