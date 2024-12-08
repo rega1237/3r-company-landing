@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         'header-image': "url('/src/images/fondo_header_navidad.jpg')",
+        'form-image': "url('/src/images/arbol_navidad_royal.jpg')",
       },
       fontFamily: {
         'christmas': ['Mountains of Christmas', 'serif'],
