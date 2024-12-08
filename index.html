@@ -1,39 +1,483 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="/src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body class="">
-    <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
-      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
-        <span class="countdown font-mono text-5xl">
-          <span id="days" style="--value:00;"></span>
-        </span>
-        days
-      </div>
-      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
-        <span class="countdown font-mono text-5xl">
-          <span id="hours" style="--value:00;"></span>
-        </span>
-        hours
-      </div>
-      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
-        <span class="countdown font-mono text-5xl">
-          <span id="min" style="--value:00;"></span>
-        </span>
-        min
-      </div>
-      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
-        <span class="countdown font-mono text-5xl">
-          <span id="sec" style="--value:${counter};"></span>
-        </span>
-        sec
+  <body>
+    <div class="hero bg-header-image min-h-screen">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <img
+            src="src/images/logo_royal_sin_fondo.webp"
+            alt="Royal prestige Logo"
+            class="mx-auto w-[200px]"
+          />
+          <h1 class="text-5xl font-bold font-christmas">
+            Evento Navidad Con Royal Prestige
+          </h1>
+          <p class="py-6">
+            ¡Descubre el Secreto para Cocinar Rápido, Saludable y Sin Estrés
+            usando los productos Royal Prestige! 🍳
+          </p>
+          <button class="btn btn-accent">Reserva tu cupo</button>
+        </div>
       </div>
     </div>
+
+    <div class="grid md:grid-cols-2">
+      <div>
+        <img src="src/images/navida_royal.jpeg" alt="" srcset="" />
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <div class="flex md:flex-col items-center gap-1 mt-5">
+          <h2 class="text-3xl text-right font-christmas font-bold py-8 flex-1">
+            ¡No te lo pierdas!
+          </h2>
+          <div class="w-1 bg-[white] h-[100px] md:hidden"></div>
+          <div class="flex-1 md:text-xl md:text-center">
+            <h3 class="font-bold">Reserva tu lugar</h3>
+            <p>Domingo 15 de diciembre</p>
+            <p>Houston, 77092</p>
+          </div>
+        </div>
+        <div
+          class="grid auto-cols-max grid-flow-col gap-5 justify-center text-center p-8"
+        >
+          <div
+            class="bg-neutral rounded-box text-neutral-content flex flex-col p-2"
+          >
+            <span class="countdown font-mono text-5xl text-white">
+              <span id="days" style="--value: 00"></span>
+            </span>
+            días
+          </div>
+          <div
+            class="bg-neutral rounded-box text-neutral-content flex flex-col p-2"
+          >
+            <span class="countdown font-mono text-5xl text-white">
+              <span id="hours" style="--value: 00"></span>
+            </span>
+            horas
+          </div>
+          <div
+            class="bg-neutral rounded-box text-neutral-content flex flex-col p-2"
+          >
+            <span class="countdown font-mono text-5xl text-white">
+              <span id="min" style="--value: 00"></span>
+            </span>
+            min
+          </div>
+          <div
+            class="bg-neutral rounded-box text-neutral-content flex flex-col p-2"
+          >
+            <span class="countdown font-mono text-5xl text-white">
+              <span id="sec" style="--value:${counter};"></span>
+            </span>
+            seg
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="bg-gray-50">
+      <div
+        class="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24"
+      >
+        <div
+          class="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center lg:gap-16"
+        >
+          <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+            <h2
+              class="text-3xl font-bold tracking-tight text-gray-900"
+            >
+              Testimonio de personas que han asistido a eventos anteriores
+            </h2>
+
+            <p class="mt-4 text-gray-700">
+              No dejes que otros te lo cuenten, ven y vive la experiencia de primera mano este 15 de diciembre.
+            </p>
+
+            <div class="hidden lg:mt-8 lg:flex lg:gap-4">
+              <button
+                aria-label="Previous slide"
+                id="keen-slider-previous-desktop"
+                class="rounded-full border border-rose-600 p-3 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-5 rtl:rotate-180"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </button>
+
+              <button
+                aria-label="Next slide"
+                id="keen-slider-next-desktop"
+                class="rounded-full border border-rose-600 p-3 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+              >
+                <svg
+                  class="size-5 rtl:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 5l7 7-7 7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="-mx-6 lg:col-span-2 lg:mx-0">
+            <div id="keen-slider" class="keen-slider">
+              <div class="keen-slider__slide">
+                <blockquote
+                  class="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12"
+                >
+                  <div>
+                    <div class="flex gap-0.5 text-green-500">
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="mt-4">
+                      <p class="text-2xl font-bold text-rose-600 sm:text-3xl">
+                        Experiencia Increible
+                      </p>
+
+                      <p class="mt-4 leading-relaxed text-gray-700">
+                        ¡Fue una experiencia increíble! Los productos de Royal
+                        Prestige son espectaculares, nos sentimos atendidas,
+                        disfrutamos la comida deliciosa, y hasta participamos en
+                        las rifas y ganamos. Definitivamente, nuestra cocina ya
+                        no será la misma.
+                      </p>
+                    </div>
+                  </div>
+
+                  <footer
+                    class="flex gap-2 items-center mt-4 text-sm font-medium text-gray-700 sm:mt-6"
+                  >
+                    <img
+                      src="src/images/testimonio_1.jpeg"
+                      alt="Testimonio de clientes"
+                      class="w-[100px] h-[100px] rounded-full"
+                    />
+                    &mdash; Juan & Maria Perez
+                  </footer>
+                </blockquote>
+              </div>
+
+              <div class="keen-slider__slide">
+                <blockquote
+                  class="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12"
+                >
+                  <div>
+                    <div class="flex gap-0.5 text-green-500">
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="mt-4">
+                      <p class="text-2xl font-bold text-rose-600 sm:text-3xl">
+                        Me sorprendió
+                      </p>
+
+                      <p class="mt-4 leading-relaxed text-gray-700">
+                        “Al principio vine con un poco de dudas, pero tengo que
+                        admitir que me sorprendió. La demostración me ayudó a
+                        ver lo fácil que es cocinar con estos productos, hasta
+                        los niños se divirtieron. ¡Ya estoy pensando en qué
+                        producto comprar para que las cenas sean más rápidas y
+                        saludables!”
+                      </p>
+                    </div>
+                  </div>
+
+                  <footer
+                    class="flex gap-2 items-center mt-4 text-sm font-medium text-gray-700 sm:mt-6"
+                  >
+                    <img
+                      src="src/images/testimonio_2.jpeg"
+                      alt="Testimonio de clientes"
+                      class="w-[100px] h-[100px] rounded-full"
+                    />
+                    &mdash; Guadalupe Rios
+                  </footer>
+                </blockquote>
+              </div>
+
+              <div class="keen-slider__slide">
+                <blockquote
+                  class="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12"
+                >
+                  <div>
+                    <div class="flex gap-0.5 text-green-500">
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="size-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="mt-4">
+                      <p class="text-2xl font-bold text-rose-600 sm:text-3xl">
+                        La comida estaba deliciosa...
+                      </p>
+
+                      <p class="mt-4 leading-relaxed text-gray-700">
+                        “Siempre me he preocupado en invertir en calidad, y este
+                        evento me lo confirmó. La comida que prepararon estaba
+                        deliciosa, y los sorteos estuvieron emocionantes. Royal
+                        Prestige realmente es lo mejor en cocina”
+                      </p>
+                    </div>
+                  </div>
+
+                  <footer
+                    class="flex gap-2 items-center mt-4 text-sm font-medium text-gray-700 sm:mt-6"
+                  >
+                    <img
+                      src="src/images/testimonio_3.jpeg"
+                      alt="Testimonio de clientes"
+                      class="w-[100px] h-[100px] rounded-full"
+                    />
+                    &mdash; Maria Suarez
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-center gap-4 lg:hidden">
+          <button
+            aria-label="Previous slide"
+            id="keen-slider-previous"
+            class="rounded-full border border-rose-600 p-4 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+          >
+            <svg
+              class="size-5 -rotate-180 transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 5l7 7-7 7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+
+          <button
+            aria-label="Next slide"
+            id="keen-slider-next"
+            class="rounded-full border border-rose-600 p-4 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+          >
+            <svg
+              class="size-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 5l7 7-7 7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
