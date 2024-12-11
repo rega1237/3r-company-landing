@@ -185,15 +185,19 @@
                 id="MERGE1"
                 placeholder="Nombre y Apellido"
                 class="block w-full p-4 text-lg text-gray-500 rounded-lg shadow-sm"
+                required
               />
             </div>
             <div class="pb-2 pt-4">
               <input
                 class="block w-full p-4 text-lg text-gray-500 rounded-lg shadow-sm"
-                type="phone"
+                type="tel"
+                maxlength="10"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);"
                 name="MERGE4"
                 id="MERGE4"
                 placeholder="Número de teléfono"
+                required
               />
             </div>
             <div class="pb-2 pt-4">
@@ -203,6 +207,7 @@
                 name="MERGE0"
                 id="MERGE0"
                 placeholder="Correo electrónico"
+                required
               />
             </div>
             <div class="pb-2 pt-4">
